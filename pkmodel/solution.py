@@ -33,9 +33,9 @@ class Solution:
             parameters of the dose and time span for the ODE solver
         """
         # Verify the type of the model and protocol arguments
-        if type(model) != pk.Model:
+        if not isinstance(model, pk.Model):
             raise TypeError('The model must be a pkmodel Model')
-        if type(protocol) != pk.Protocol:
+        if not isinstance(protocol, pk.Protocol):
             raise TypeError('The protocol must be a pkmodel Protocol')
         # Add the model and protocol to their lists
         self.models.append(model)
@@ -93,9 +93,9 @@ class Solution:
             if type(item) not in [int, float, numpy.float64]:
                 raise TypeError('q must be array of float or int values')
         # Verify the type of the model and protocol arguments
-        if type(model) != pk.Model:
+        if not isinstance(model, pk.Model):
             raise TypeError('The model must be a pkmodel Model')
-        if type(protocol) != pk.Protocol:
+        if not isinstance(protocol, pk.Protocol):
             raise TypeError('The protocol must be a pkmodel Protocol')
         return True
 
